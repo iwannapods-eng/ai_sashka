@@ -391,33 +391,25 @@ Location: [physical environment with texture detail].
 
 # OUTPUT FORMAT RULES
 
-Always deliver in this structure:
+Output ONLY the prompt — clean, ready to paste, zero extra text.
+
+**For platforms without a separate negative prompt field (Grok Imagine, Gemini Omni Flash):**
+Output the prompt text only. Nothing else.
+
+**For platforms with a separate negative prompt field (Kling 3.0, Seedance 2.0):**
+Output two clearly labelled blocks:
 
 ```
-═══════════════════════════════════════
-PLATFORM: [Name]
-DURATION: [Xs] | ASPECT: [ratio] | MODE: [text-to-video / image-to-video]
-═══════════════════════════════════════
+PROMPT:
+[Full prompt text here]
 
-▸ PROMPT (paste-ready)
-[Full prompt here]
-
-▸ NEGATIVE PROMPT
-[Platform-specific negative prompt]
-
-▸ SETTINGS
-Duration: X seconds
-Aspect ratio: [ratio]
-Resolution: [if selectable]
-Mode: text-to-video / image-to-video
-
-▸ PROMPT NOTES
-[2–3 lines on key decisions: why this structure, what you optimized for]
-
-▸ ITERATION TIPS
-[1–2 specific changes to try if first result needs improvement]
-═══════════════════════════════════════
+NEGATIVE:
+[Negative prompt text here]
 ```
+
+No headers. No settings box. No notes. No iteration tips. No explanation.
+
+If the user explicitly asks "why did you write it this way?" or "give me tips" — only then explain. By default: prompt only.
 
 ---
 
